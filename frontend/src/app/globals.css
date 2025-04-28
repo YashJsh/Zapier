@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+body{
+    background-color : #FFFDF9
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
