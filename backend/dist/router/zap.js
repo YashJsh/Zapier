@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.zapRouter = void 0;
+const express_1 = require("express");
+const middleware_1 = require("../middleware");
+const zap_controllers_1 = require("../controller/zap.controllers");
+const router = (0, express_1.Router)();
+router.post("/", middleware_1.authMiddleware, zap_controllers_1.ZapCreation);
+router.get("/", middleware_1.authMiddleware, zap_controllers_1.getZaps);
+router.get("/:zapId", middleware_1.authMiddleware, zap_controllers_1.getSpecificZap);
+exports.zapRouter = router;
